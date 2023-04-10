@@ -1,7 +1,7 @@
 package com.diliprathore.employeeservice.controller;
 
+import com.diliprathore.employeeservice.dto.APIResponseDto;
 import com.diliprathore.employeeservice.dto.EmployeeDto;
-import com.diliprathore.employeeservice.entity.Employee;
 import com.diliprathore.employeeservice.service.EmployeeService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -22,8 +22,8 @@ public class EmployeeController {
     }
 
     @GetMapping("{id}")
-    public ResponseEntity<EmployeeDto> getEmployee(@PathVariable Long id){
-        EmployeeDto employeeDto = employeeService.getEmployee(id);
-        return new ResponseEntity<>(employeeDto, HttpStatus.OK);
+    public ResponseEntity<APIResponseDto> getEmployee(@PathVariable Long id){
+        APIResponseDto apiResponseDto = employeeService.getEmployee(id);
+        return new ResponseEntity<>(apiResponseDto, HttpStatus.OK);
     }
 }
