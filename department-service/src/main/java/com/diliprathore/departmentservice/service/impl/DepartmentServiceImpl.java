@@ -2,14 +2,11 @@ package com.diliprathore.departmentservice.service.impl;
 
 import com.diliprathore.departmentservice.dto.DepartmentDto;
 import com.diliprathore.departmentservice.entity.Department;
-import com.diliprathore.departmentservice.exception.ResourceNotFoundException;
 import com.diliprathore.departmentservice.repository.DepartmentRepository;
 import com.diliprathore.departmentservice.service.DepartmentService;
 import lombok.AllArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
-
-import java.util.Optional;
 
 @Service
 @AllArgsConstructor
@@ -19,7 +16,7 @@ public class DepartmentServiceImpl implements DepartmentService {
 
     @Override
     public DepartmentDto saveDepartment(DepartmentDto departmentDto) {
-        // convert DepartmentDto to Department entity
+        // convert DepartmentDto to Department com.diliprathore.organizationservice.entity
         Department department = modelMapper.map(departmentDto, Department.class);
 
         Department savedDepartment = departmentRepository.save(department);
